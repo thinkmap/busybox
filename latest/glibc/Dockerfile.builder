@@ -195,7 +195,7 @@ RUN chroot rootfs /usr/bin/env sh -xec 'true'
 # ensure correct timezone (UTC)
 RUN set -eux; \
 	ln -vL /usr/share/zoneinfo/UTC rootfs/etc/localtime; \
-	[ "$(chroot rootfs date +%Z)" = 'UTC+8' ]
+	[ "$(chroot rootfs date +%Z)" = 'UTC' ]
 
 # test and make sure DNS works too
 RUN cp -L /etc/resolv.conf rootfs/etc/; \
